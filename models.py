@@ -2,6 +2,7 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 from database import Base
 
+
 # Определим модель Users - таблица юзеров
 class User(Base):
     __tablename__ = "users"
@@ -12,6 +13,7 @@ class User(Base):
     is_active = Column(Boolean, default=True)
 
     items = relationship("Task", back_populates="owner")
+
 
 # Определяем модель Task - таблица заданий
 class Task(Base):
